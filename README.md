@@ -1,1 +1,106 @@
 # My-love-to-any
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love for Any ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #200018, #50002c, #100018);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 100px;
+  color: #ff75b5;
+  font-size: 32px;
+}
+
+p {
+  font-size: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff2e93;
+  color: white;
+}
+
+#no {
+  background: white;
+  color: #ff2e93;
+  position: absolute;
+}
+
+.heart {
+  position: absolute;
+  top: -30px;
+  color: #ff4d9d;
+  animation: rain linear infinite;
+}
+
+@keyframes rain {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Сайн уу, миний хайр ❤️</h1>
+
+<p>Чамд нэг зүйл хэлэх гэсэн юм...</p>
+
+<h2>Таньд би хайртай шүү. Та надад хайртай юу🥺😘</h2>
+
+<button id="yes" onclick="love()">Тийм ❤️</button>
+
+<button id="no" onclick="run()">Үгүй 💔</button>
+
+<div id="message"></div>
+
+<script>
+function love() {
+  document.getElementById("message").innerHTML =
+  "<h1>Би чамдаа маш их хайртай шүү 💖</h1>" +
+  "<p>Чи миний аз жаргал, миний гэрэл гэгээ. миний бүх зүйл.</p>" +
+  "<h2>Үүрд гэж хэлэхгүй ээ 60хан 70хан 80хан жил хамт байгаа ч ❤️</h2>";
+}
+
+function run() {
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 100);
+
+  document.getElementById("no").style.left = x + "px";
+  document.getElementById("no").style.top = y + "px";
+}
+
+for (let i = 0; i < 50; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (2 + Math.random() * 5) + "s";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
